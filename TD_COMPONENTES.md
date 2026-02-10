@@ -7,6 +7,8 @@
 **Linguagem:** JavaScript 
 **Estilo:** CSS Modules ou CSS puro
 
+Este TD descreve a estrutura pensada para o sistema, mas a implementação desta sprint será focada apenas no fluxo principal de consulta do usuário.
+
 ---
 
 ## 2. Estrutura de Componentes
