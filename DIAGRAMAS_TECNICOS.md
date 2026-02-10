@@ -33,26 +33,16 @@ flowchart TD
 
 ```mermaid
 graph TB
-    subgraph "Aplicação React"
-        App[App Component]
-        App --> VehicleSearch[VehicleSearch Component]
-        App --> VehicleResult[VehicleResult Component]
-        
-        VehicleSearch --> FipeAPI[fipeApi Service]
-        
-        subgraph "VehicleSearch State"
-            VS_State[brands, models, years<br/>selectedBrand, selectedModel, selectedYear<br/>loading, error]
-        end
-        
-        subgraph "App State"
-            App_State[currentView: 'search' | 'result'<br/>vehicleData: Vehicle | null]
-        end
-        
-        VehicleSearch -.-> VS_State
-        App -.-> App_State
-    end
+    App[App Component]
+    VehicleSearch[VehicleSearch Component]
+    VehicleResult[VehicleResult Component]
+    FipeAPI[fipeApi Service]
+    API[API da Fipe]
     
-    FipeAPI --> API[API da Fipe<br/>parallelum.com.br]
+    App --> VehicleSearch
+    App --> VehicleResult
+    VehicleSearch --> FipeAPI
+    FipeAPI --> API
     
     style App fill:#3498db,color:#fff
     style VehicleSearch fill:#2ecc71,color:#fff
@@ -119,24 +109,19 @@ sequenceDiagram
 
 ```mermaid
 graph LR
-    subgraph "API Fipe"
-        API_Brands[/carros/marcas]
-        API_Models[/carros/marcas/{id}/modelos]
-        API_Years[/carros/marcas/{id}/modelos/{id}/anos]
-        API_Price[/carros/marcas/{id}/modelos/{id}/anos/{id}]
-    end
+    API_Brands[API: /carros/marcas]
+    API_Models[API: /modelos]
+    API_Years[API: /anos]
+    API_Price[API: /preco]
     
-    subgraph "fipeApi Service"
-        fetchBrands[fetchBrands]
-        fetchModels[fetchModels]
-        fetchYears[fetchYears]
-        fetchPrice[fetchPrice]
-    end
+    fetchBrands[fetchBrands]
+    fetchModels[fetchModels]
+    fetchYears[fetchYears]
+    fetchPrice[fetchPrice]
     
-    subgraph "VehicleSearch Component"
-        State[State:<br/>brands, models, years<br/>selected*]
-        Dropdowns[Dropdowns UI]
-    end
+    State[VehicleSearch State]
+    App_State[App State]
+    VehicleResult[VehicleResult]
     
     API_Brands --> fetchBrands
     API_Models --> fetchModels
@@ -148,15 +133,7 @@ graph LR
     fetchYears --> State
     fetchPrice --> App_State
     
-    State --> Dropdowns
-    
-    subgraph "App Component"
-        App_State[State:<br/>vehicleData]
-        Navigation[Navigation Logic]
-    end
-    
-    App_State --> Navigation
-    Navigation --> VehicleResult[VehicleResult<br/>Component]
+    App_State --> VehicleResult
     
     style API_Brands fill:#e74c3c,color:#fff
     style API_Models fill:#e74c3c,color:#fff
@@ -176,37 +153,26 @@ graph LR
 
 ```mermaid
 stateDiagram-v2
-    [*] --> SearchView: App inicia
+    [*] --> SearchView
     
-    SearchView --> LoadingBrands: Carrega marcas
-    LoadingBrands --> SearchView: Marcas carregadas
+    SearchView --> LoadingBrands
+    LoadingBrands --> SearchView
     
-    SearchView --> LoadingModels: Marca selecionada
-    LoadingModels --> SearchView: Modelos carregados
+    SearchView --> LoadingModels
+    LoadingModels --> SearchView
     
-    SearchView --> LoadingYears: Modelo selecionado
-    LoadingYears --> SearchView: Anos carregados
+    SearchView --> LoadingYears
+    LoadingYears --> SearchView
     
-    SearchView --> LoadingPrice: Consultar clicado
-    LoadingPrice --> ResultView: Preço obtido
-    LoadingPrice --> ErrorState: Erro na API
+    SearchView --> LoadingPrice
+    LoadingPrice --> ResultView
+    LoadingPrice --> ErrorState
     
-    ErrorState --> SearchView: Tentar novamente
+    ErrorState --> SearchView
+    ResultView --> SearchView
     
-    ResultView --> SearchView: Nova Consulta
-    
-    SearchView --> [*]: Usuário sai
-    ResultView --> [*]: Usuário sai
-    
-    note right of SearchView
-        Estado: search
-        Componente: VehicleSearch
-    end note
-    
-    note right of ResultView
-        Estado: result
-        Componente: VehicleResult
-    end note
+    SearchView --> [*]
+    ResultView --> [*]
 ```
 
 ---
