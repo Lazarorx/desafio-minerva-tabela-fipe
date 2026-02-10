@@ -4,7 +4,7 @@
 
 **Tipo:** Aplicação Web SPA (Single Page Application)
 **Framework:** React 18+ com Vite
-**Linguagem:** JavaScript (ou TypeScript opcional)
+**Linguagem:** JavaScript 
 **Estilo:** CSS Modules ou CSS puro
 
 ---
@@ -1008,8 +1008,3 @@ npx vercel
 - Quarta: Setup + VehicleSearch (4-5h)
 - Quinta: VehicleResult + ajustes (4-5h)
 
----
-
-**Documento criado em:** 10 de fevereiro de 2026  
-**Versão:** 1.0  
-**Projeto:** Tabela Fipe - MVP Web
