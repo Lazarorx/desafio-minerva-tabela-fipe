@@ -1,0 +1,37 @@
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos do editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Arquivos temporários
+*.tmp
+*.bak
+*.log
+
+# Arquivos pessoais/internos (não entregar)
+GUIA_*.md
+COMO_*.md
+COLA_*.md
+ROTEIRO_*.md
+O_QUE_FALAR_*.md
+SLIDES_*.md
+PROMPT_*.txt
+COMPARACAO.md
+RESUMO_EXECUTIVO.md
+PROXIMOS_PASSOS_*.md
+PLANNING.md
+
+# Node modules (quando implementar)
+node_modules/
+dist/
+build/
+
+# Dependências
+package-lock.json
+yarn.lock
