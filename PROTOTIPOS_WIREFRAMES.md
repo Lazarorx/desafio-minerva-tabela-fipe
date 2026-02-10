@@ -603,8 +603,3 @@ Se você quiser criar uma versão mais visual dos wireframes, use:
 
 **Status:** ✅ Protótipos completos
 
----
-
-**Documento criado em:** 10 de fevereiro de 2026  
-**Versão:** 1.0  
-**Projeto:** Tabela Fipe - Protótipos MVP
