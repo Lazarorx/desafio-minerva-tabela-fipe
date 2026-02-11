@@ -79,13 +79,15 @@ main {
   width: 100%;
   overflow-x: hidden;
   padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 /* Container para centralizar conteúdo em telas grandes */
 main > * {
+  width: 100%;
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 @media (min-width: 1024px) {
