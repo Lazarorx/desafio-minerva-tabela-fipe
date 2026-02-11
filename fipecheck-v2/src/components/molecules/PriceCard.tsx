@@ -53,8 +53,11 @@ const PriceCard: React.FC<PriceCardProps> = ({
       </div>
 
       <div className="mt-4 p-3 bg-blue-50 rounded-lg">
-        <p className="text-xs text-gray-600 text-center">
-          💡 A faixa de preço considera variações de mercado baseadas no valor Fipe
+        <p className="text-xs text-gray-600 text-center flex items-center justify-center gap-2">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>
+          </svg>
+          A faixa de preço considera variações de mercado baseadas no valor Fipe
         </p>
       </div>
     </Card>

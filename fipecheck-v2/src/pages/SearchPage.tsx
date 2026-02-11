@@ -28,7 +28,9 @@ const SearchPage: React.FC<SearchPageProps> = ({ onSearch }) => {
         {/* Info Box */}
         <div className="mt-8 p-6 bg-blue-50 rounded-xl border border-blue-100">
           <div className="flex items-start gap-3">
-            <span className="text-3xl">💡</span>
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3498db" strokeWidth="2">
+              <circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>
+            </svg>
             <div>
               <h3 className="font-bold text-gray-800 mb-2">Dica</h3>
               <p className="text-sm text-gray-600">

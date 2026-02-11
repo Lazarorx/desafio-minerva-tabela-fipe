@@ -95,8 +95,11 @@ const PriceTrendChart: React.FC<PriceTrendChartProps> = ({ data }) => {
 
   return (
     <Card>
-      <h3 className="text-lg font-bold text-gray-800 mb-4">
-        📈 Evolução de Preço (Últimos 12 Meses)
+      <h3 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+        </svg>
+        Evolução de Preço (Últimos 12 Meses)
       </h3>
       <div className="h-64">
         <Line data={chartData} options={options} />
