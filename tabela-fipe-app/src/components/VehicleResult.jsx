@@ -44,12 +44,28 @@ function VehicleResult({ vehicleData, onNewSearch }) {
           </small>
         </div>
 
-        <button 
-          className="btn-new-search" 
-          onClick={onNewSearch}
-        >
-          Nova Consulta
-        </button>
+        <div className="action-buttons">
+          <button 
+            className="btn-new-search" 
+            onClick={onNewSearch}
+          >
+            🔍 Nova Consulta
+          </button>
+          <button 
+            className="btn-share"
+            onClick={() => {
+              const text = `${vehicleData.Marca} ${vehicleData.Modelo} (${vehicleData.AnoModelo}) - ${vehicleData.Valor}`;
+              if (navigator.share) {
+                navigator.share({ title: 'FipeCheck', text });
+              } else {
+                navigator.clipboard.writeText(text);
+                alert('Informações copiadas!');
+              }
+            }}
+          >
+            📤 Compartilhar
+          </button>
+        </div>
       </div>
     </div>
   );

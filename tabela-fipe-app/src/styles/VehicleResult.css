@@ -1,14 +1,28 @@
 .vehicle-result {
-  background: #fff;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .vehicle-result h2 {
   color: #2c3e50;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
 }
 
 .result-card {
@@ -17,82 +31,183 @@
 
 .vehicle-title h3 {
   color: #2c3e50;
-  font-size: 1.8rem;
-  margin-bottom: 30px;
+  font-size: 2rem;
+  margin-bottom: 35px;
+  font-weight: 800;
+  line-height: 1.3;
 }
 
 .vehicle-info {
-  margin: 30px 0;
+  margin: 35px 0;
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 16px;
 }
 
 .info-row {
   display: flex;
   justify-content: space-between;
-  padding: 12px 0;
-  border-bottom: 1px solid #ecf0f1;
+  padding: 16px 0;
+  border-bottom: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-row:hover {
+  background: rgba(102, 126, 234, 0.05);
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 8px;
 }
 
 .info-row .label {
-  font-weight: 600;
-  color: #7f8c8d;
+  font-weight: 700;
+  color: #667eea;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
 }
 
 .info-row .value {
   color: #2c3e50;
+  font-weight: 600;
+  font-size: 1.05rem;
 }
 
 .vehicle-price {
-  background: #3498db;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  padding: 30px;
-  border-radius: 8px;
-  margin: 30px 0;
+  padding: 40px;
+  border-radius: 20px;
+  margin: 35px 0;
+  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.vehicle-price::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.8; }
 }
 
 .price-label {
   display: block;
-  font-size: 0.9rem;
-  margin-bottom: 10px;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  opacity: 0.9;
 }
 
 .price-value {
   display: block;
-  font-size: 2.5rem;
-  font-weight: bold;
+  font-size: 3rem;
+  font-weight: 900;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
 }
 
 .reference-month {
   color: #7f8c8d;
-  margin: 20px 0;
+  margin: 25px 0;
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 
 .btn-new-search {
   width: 100%;
-  padding: 14px;
-  background: #2ecc71;
+  padding: 16px;
+  background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
   color: white;
   border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  font-weight: 600;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 700;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 20px rgba(46, 204, 113, 0.3);
 }
 
 .btn-new-search:hover {
-  background: #27ae60;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(46, 204, 113, 0.4);
+}
+
+.btn-new-search:active {
+  transform: translateY(0);
 }
 
 @media (max-width: 768px) {
   .vehicle-result {
-    padding: 20px;
+    padding: 25px;
+    border-radius: 16px;
   }
   
   .vehicle-title h3 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
   
   .price-value {
-    font-size: 2rem;
+    font-size: 2.2rem;
+  }
+  
+  .vehicle-price {
+    padding: 30px 20px;
+  }
+}
+
+
+.action-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.btn-share {
+  padding: 16px;
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+}
+
+.btn-share:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(52, 152, 219, 0.4);
+}
+
+.btn-share:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .action-buttons {
+    grid-template-columns: 1fr;
   }
 }
