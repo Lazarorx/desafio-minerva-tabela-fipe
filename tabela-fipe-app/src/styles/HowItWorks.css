@@ -2,10 +2,6 @@
   margin-bottom: 60px;
   background: white;
   padding: 60px 40px;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
   animation: fadeInUp 0.8s ease-out;
 }
 

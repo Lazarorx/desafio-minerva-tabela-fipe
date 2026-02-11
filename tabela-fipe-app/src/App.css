@@ -76,8 +76,8 @@ header h1 {
 
 main {
   flex: 1;
-  width: 100%;
-  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 main.search-view {
@@ -86,6 +86,7 @@ main.search-view {
   justify-content: center;
   align-items: center;
   min-height: calc(100vh - 80px);
+  background: #f5f7fa;
 }
 
 @media (min-width: 1024px) {

@@ -1,9 +1,6 @@
 .hero {
   background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
   padding: 100px 20px 120px;
-  margin: 0 0 0 0;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
   text-align: center;
   position: relative;
   overflow: hidden;
