@@ -1,16 +1,54 @@
-# React + Vite
+# Tabela Fipe - Aplicação Web
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação web para consulta de preços de veículos na Tabela Fipe.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologias
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 19
+- Vite
+- Axios
+- CSS puro
 
-## React Compiler
+## 📋 Funcionalidades
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Consulta de preços de carros pela Tabela Fipe
+- Seleção em cascata: Marca → Modelo → Ano
+- Exibição de informações detalhadas do veículo
+- Interface responsiva
 
-## Expanding the ESLint configuration
+## 🔧 Como rodar
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+# Instalar dependências
+npm install
+
+# Rodar em desenvolvimento
+npm run dev
+
+# Build para produção
+npm run build
+```
+
+## 📦 Estrutura
+
+```
+src/
+├── components/
+│   ├── VehicleSearch.jsx    # Formulário de busca
+│   └── VehicleResult.jsx    # Exibição do resultado
+├── services/
+│   └── fipeApi.js           # Integração com API
+├── styles/
+│   ├── VehicleSearch.css
+│   └── VehicleResult.css
+├── App.jsx                  # Componente principal
+└── main.jsx                 # Entry point
+```
+
+## 🌐 API
+
+Utiliza a API pública da Fipe: https://parallelum.com.br/fipe/api/v1
+
+## 👨‍💻 Desenvolvimento
+
+Projeto desenvolvido como parte do Desafio Minerva 2026.

@@ -592,12 +592,6 @@ Se você quiser criar uma versão mais visual dos wireframes, use:
 4. Explicar fluxo de navegação
 5. Mostrar especificações visuais (cores, fontes)
 
-**Tempo de apresentação:** 3-5 minutos
-
-### 12.2 O Que Falar
-
-"Criei wireframes das duas telas principais: consulta e resultado. A tela de consulta tem três dropdowns em cascata - marca, modelo e ano - com validação que só habilita o próximo campo quando o anterior tá preenchido. A tela de resultado mostra as informações do veículo com o preço em destaque e um botão pra fazer nova consulta. Defini também as cores, tipografia e como vai ficar no mobile."
-
 ---
 
 ## 13. Resumo
@@ -609,8 +603,3 @@ Se você quiser criar uma versão mais visual dos wireframes, use:
 
 **Status:** ✅ Protótipos completos
 
----
-
-**Documento criado em:** 10 de fevereiro de 2026  
-**Versão:** 1.0  
-**Projeto:** Tabela Fipe - Protótipos MVP

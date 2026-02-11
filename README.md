@@ -288,12 +288,6 @@ Branco:              #ffffff
 
 ---
 
-## 📞 Informações
-
-**Projeto:** Desafio Minerva 2026  
-**Data:** 10 de fevereiro de 2026
-
----
 
 ## 📝 Notas Finais
 

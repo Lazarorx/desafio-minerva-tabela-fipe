@@ -408,8 +408,4 @@ CREATE INDEX idx_brand ON consultation_logs(brand);
 - [x] Diagrama de relacionamento criado
 - [x] Considerações técnicas incluídas
 
----
 
-**Documento criado em:** 10 de fevereiro de 2026  
-**Versão:** 1.0  
-**Projeto:** Tabela Fipe - Modelo de Dados
