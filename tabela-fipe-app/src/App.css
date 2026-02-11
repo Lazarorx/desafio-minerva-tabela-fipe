@@ -21,16 +21,16 @@ body {
 }
 
 header {
-  background: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  padding: 20px 0;
+  background: #1e3c72;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 15px 0;
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
 .header-content {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
@@ -49,11 +49,29 @@ header {
 }
 
 header h1 {
-  color: #1a1a1a;
-  font-size: 1.8rem;
+  color: white;
+  font-size: 1.6rem;
   font-weight: 800;
   margin: 0;
   line-height: 1;
+}
+
+.header-nav {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.header-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: opacity 0.3s;
+}
+
+.header-nav a:hover {
+  opacity: 0.8;
 }
 
 .subtitle {
