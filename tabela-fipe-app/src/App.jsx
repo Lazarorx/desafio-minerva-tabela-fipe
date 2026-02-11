@@ -2,7 +2,6 @@ import { useState } from 'react';
 import VehicleSearch from './components/VehicleSearch';
 import VehicleResult from './components/VehicleResult';
 import Hero from './components/Hero';
-import PopularCars from './components/PopularCars';
 import HowItWorks from './components/HowItWorks';
 import './App.css';
 
@@ -47,7 +46,6 @@ function App() {
         {currentView === 'home' && (
           <>
             <Hero onStartSearch={handleStartSearch} />
-            <PopularCars onStartSearch={handleStartSearch} />
             <HowItWorks />
           </>
         )}

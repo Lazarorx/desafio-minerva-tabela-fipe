@@ -5,7 +5,22 @@
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
   max-width: 600px;
+  width: 100%;
   margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .vehicle-search {
+    max-width: 700px;
+    padding: 50px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .vehicle-search {
+    max-width: 800px;
+    padding: 60px;
+  }
 }
 
 .vehicle-search h2 {
@@ -14,6 +29,13 @@
   text-align: center;
   font-size: 1.8rem;
   font-weight: 700;
+}
+
+@media (min-width: 1024px) {
+  .vehicle-search h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+  }
 }
 
 .form-group {
@@ -45,6 +67,13 @@
   background-repeat: no-repeat;
   background-position: right 15px center;
   padding-right: 45px;
+}
+
+@media (min-width: 1024px) {
+  .form-group select {
+    padding: 18px 20px;
+    font-size: 17px;
+  }
 }
 
 .form-group select:hover:not(:disabled) {
@@ -80,6 +109,13 @@ button[type="submit"] {
   letter-spacing: 1px;
   margin-top: 10px;
   box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+@media (min-width: 1024px) {
+  button[type="submit"] {
+    padding: 18px;
+    font-size: 18px;
+  }
 }
 
 button[type="submit"]:hover:not(:disabled) {
