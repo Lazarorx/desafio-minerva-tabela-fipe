@@ -12,12 +12,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #f5f7fa;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 header {
@@ -27,6 +30,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
+  width: 100%;
 }
 
 .header-content {
@@ -80,10 +84,8 @@ header h1 {
 
 main {
   flex: 1;
-  max-width: 1200px;
   width: 100%;
-  margin: 0 auto;
-  padding: 40px 20px;
+  overflow-x: hidden;
 }
 
 footer {
@@ -91,6 +93,7 @@ footer {
   color: rgba(255, 255, 255, 0.8);
   padding: 40px 20px;
   margin-top: auto;
+  width: 100%;
 }
 
 .footer-content {
@@ -136,7 +139,7 @@ footer p {
     font-size: 1.4rem;
   }
   
-  main {
-    padding: 20px 15px;
+  .header-nav {
+    display: none;
   }
 }
