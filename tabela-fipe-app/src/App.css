@@ -78,6 +78,9 @@ main {
   flex: 1;
   width: 100%;
   overflow-x: hidden;
+}
+
+main.search-view {
   padding: 40px 20px;
   display: flex;
   justify-content: center;
@@ -85,25 +88,15 @@ main {
   min-height: calc(100vh - 80px);
 }
 
-/* Container para centralizar conteúdo em telas grandes */
-main > * {
-  width: 100%;
-  max-width: 1200px;
-}
-
 @media (min-width: 1024px) {
-  main {
+  main.search-view {
     padding: 60px 40px;
   }
 }
 
 @media (min-width: 1440px) {
-  main {
+  main.search-view {
     padding: 80px 60px;
-  }
-  
-  main > * {
-    max-width: 1400px;
   }
 }
 

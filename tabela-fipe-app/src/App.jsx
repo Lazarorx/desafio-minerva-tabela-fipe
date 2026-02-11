@@ -42,7 +42,7 @@ function App() {
         </div>
       </header>
       
-      <main>
+      <main className={currentView === 'search' || currentView === 'result' ? 'search-view' : ''}>
         {currentView === 'home' && (
           <>
             <Hero onStartSearch={handleStartSearch} />

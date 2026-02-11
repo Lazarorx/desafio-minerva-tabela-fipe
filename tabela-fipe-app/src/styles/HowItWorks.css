@@ -4,10 +4,8 @@
   padding: 60px 40px;
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 60px;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
   animation: fadeInUp 0.8s ease-out;
 }
 
@@ -28,12 +26,18 @@
   text-align: center;
   margin-bottom: 50px;
   font-weight: 800;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
 }
 
 .steps-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Media queries para telas maiores */
