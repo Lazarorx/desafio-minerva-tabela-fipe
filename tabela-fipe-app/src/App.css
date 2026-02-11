@@ -67,26 +67,11 @@ header h1 {
   line-height: 1;
 }
 
-.header-nav {
-  display: flex;
-  gap: 30px;
-  align-items: center;
-}
-
-.header-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: opacity 0.3s;
-}
-
-.header-nav a:hover {
-  opacity: 0.8;
-}
-
 .subtitle {
-  display: none;
+  display: block;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.75rem;
+  margin-top: 2px;
 }
 
 main {

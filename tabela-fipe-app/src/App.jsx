@@ -28,20 +28,18 @@ function App() {
     <div className="app">
       <header>
         <div className="header-content">
-          <div className="logo">
+          <div className="logo" onClick={() => handleNewSearch()} style={{ cursor: 'pointer' }}>
             <svg width="40" height="40" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="50" height="50" rx="12" fill="white"/>
               <path d="M15 20h20M15 25h15M15 30h20M15 35h12" stroke="#1e3c72" strokeWidth="3" strokeLinecap="round"/>
               <circle cx="35" cy="32" r="8" fill="#2ecc71"/>
               <path d="M32 32l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-            <h1>FipeCheck</h1>
+            <div>
+              <h1>FipeCheck</h1>
+              <p className="subtitle">Consulta Tabela Fipe</p>
+            </div>
           </div>
-          <nav className="header-nav">
-            <a href="#marcas">Marcas</a>
-            <a href="#categorias">Categorias</a>
-            <a href="#noticias">Notícias</a>
-          </nav>
         </div>
       </header>
       

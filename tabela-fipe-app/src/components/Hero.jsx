@@ -5,9 +5,9 @@ function Hero({ onStartSearch }) {
     <section className="hero">
       <div className="hero-content">
         <h2 className="hero-title">
-          A MAIOR empresa de precificação de veículos <span className="highlight">usados e 0km</span> do mundo
+          Consulte o <span className="highlight">valor real</span> do seu veículo
         </h2>
-        <p className="hero-subtitle">Pesquise o preço certo do seu carro na FipeCheck</p>
+        <p className="hero-subtitle">Preços atualizados baseados na Tabela Fipe oficial</p>
         
         <button className="btn-hero-main" onClick={onStartSearch}>
           Consultar Preço Agora
