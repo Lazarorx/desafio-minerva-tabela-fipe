@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import VehicleSearch from './components/VehicleSearch';
 import VehicleResult from './components/VehicleResult';
+import Hero from './components/Hero';
+import PopularCars from './components/PopularCars';
+import HowItWorks from './components/HowItWorks';
 import './App.css';
 
 function App() {
-  const [currentView, setCurrentView] = useState('search');
+  const [currentView, setCurrentView] = useState('home');
   const [vehicleData, setVehicleData] = useState(null);
 
   const handleSearchComplete = (data) => {
@@ -14,6 +17,10 @@ function App() {
 
   const handleNewSearch = () => {
     setVehicleData(null);
+    setCurrentView('home');
+  };
+
+  const handleStartSearch = () => {
     setCurrentView('search');
   };
 
@@ -31,16 +38,28 @@ function App() {
         </div>
         <p className="subtitle">Consulta rápida e precisa de preços de veículos</p>
       </header>
+      
       <main>
-        {currentView === 'search' ? (
+        {currentView === 'home' && (
+          <>
+            <Hero onStartSearch={handleStartSearch} />
+            <PopularCars onStartSearch={handleStartSearch} />
+            <HowItWorks />
+          </>
+        )}
+        
+        {currentView === 'search' && (
           <VehicleSearch onSearchComplete={handleSearchComplete} />
-        ) : (
+        )}
+        
+        {currentView === 'result' && (
           <VehicleResult 
             vehicleData={vehicleData} 
             onNewSearch={handleNewSearch} 
           />
         )}
       </main>
+      
       <footer>
         <p>Desenvolvido para o Desafio Minerva 2026</p>
         <p className="footer-note">Dados fornecidos pela API Fipe oficial</p>
