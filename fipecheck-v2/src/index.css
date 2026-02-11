@@ -280,3 +280,36 @@ body {
 .to-blue-400 { --tw-gradient-to: #60a5fa; }
 .to-gray-50 { --tw-gradient-to: #f9fafb; }
 .via-primary-500 { --tw-gradient-stops: var(--tw-gradient-from), #3b82f6, var(--tw-gradient-to, rgba(59, 130, 246, 0)); }
+
+
+/* Additional utility classes */
+.min-h-\[calc\(100vh-4rem\)\] { min-height: calc(100vh - 4rem); }
+.sm\:flex-row { flex-direction: row; }
+.sm\:gap-4 { gap: 1rem; }
+
+/* Ensure body and root take full height */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fix for blank screen - ensure content is visible */
+.bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, #eff6ff, #f9fafb);
+}
+
+.from-blue-50.to-gray-50 {
+  background: linear-gradient(to bottom right, #eff6ff, #f9fafb);
+}
+
+/* Ensure all text is visible */
+* {
+  color: inherit;
+}
+
+/* Fix button disabled state */
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
