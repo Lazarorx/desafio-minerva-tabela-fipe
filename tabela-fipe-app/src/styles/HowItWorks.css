@@ -24,6 +24,35 @@
   gap: 40px;
 }
 
+/* Media queries para telas maiores */
+@media (min-width: 1024px) {
+  .how-it-works {
+    padding: 80px 60px;
+    margin-bottom: 80px;
+  }
+  
+  .how-it-works h2 {
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+  }
+  
+  .steps-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .how-it-works {
+    max-width: 1400px;
+    padding: 100px 80px;
+  }
+  
+  .how-it-works h2 {
+    font-size: 3rem;
+  }
+}
+
 .step-card {
   text-align: center;
   position: relative;

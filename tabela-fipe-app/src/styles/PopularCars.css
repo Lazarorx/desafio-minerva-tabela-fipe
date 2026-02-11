@@ -20,6 +20,35 @@
   gap: 30px;
 }
 
+/* Media queries para telas maiores */
+@media (min-width: 1024px) {
+  .popular-cars {
+    padding: 0 40px;
+    margin-bottom: 80px;
+  }
+  
+  .popular-cars h2 {
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+  }
+  
+  .cars-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .popular-cars {
+    max-width: 1400px;
+    padding: 0 60px;
+  }
+  
+  .popular-cars h2 {
+    font-size: 3rem;
+  }
+}
+
 .car-card {
   background: white;
   border-radius: 12px;

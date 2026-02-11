@@ -66,6 +66,32 @@
   box-shadow: 0 12px 32px rgba(255, 107, 53, 0.5);
 }
 
+/* Media queries para telas maiores */
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 4rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.6rem;
+  }
+  
+  .btn-hero-main {
+    font-size: 1.3rem;
+    padding: 22px 70px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero-title {
+    font-size: 4.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.8rem;
+  }
+}
+
 @media (max-width: 968px) {
   .search-form {
     grid-template-columns: 1fr;
