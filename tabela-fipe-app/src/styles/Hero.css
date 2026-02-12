@@ -95,6 +95,26 @@
   animation: none;
 }
 
+/* Media queries para notebooks comuns */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .hero {
+    padding: 80px 40px 100px;
+  }
+  
+  .hero-title {
+    font-size: 3.2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+  
+  .btn-hero-main {
+    font-size: 1.15rem;
+    padding: 18px 55px;
+  }
+}
+
 /* Media queries para telas maiores */
 @media (min-width: 1024px) {
   .hero-title {
