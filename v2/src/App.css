@@ -1,4 +1,22 @@
 .app {
   min-height: 100vh;
   background: var(--bg-secondary);
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  min-height: calc(100vh - 70px);
+}
+
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  font-size: 2rem;
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 40px;
 }
