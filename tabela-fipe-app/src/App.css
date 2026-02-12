@@ -92,12 +92,21 @@ main.search-view {
   background: #f5f7fa;
 }
 
-/* Media queries para notebooks comuns */
-@media (min-width: 769px) and (max-width: 1023px) {
+/* Media queries para notebooks comuns (785px-1366px) */
+@media (min-width: 769px) and (max-width: 1366px) {
+  .app {
+    width: 100%;
+  }
+  
+  main.search-view {
+    padding: 40px 30px;
+    width: 100%;
+  }
+  
   .vehicle-search {
-    max-width: 600px;
-    width: 600px;
-    padding: 45px;
+    max-width: 650px;
+    width: 90%;
+    padding: 40px;
   }
   
   .vehicle-search h2 {

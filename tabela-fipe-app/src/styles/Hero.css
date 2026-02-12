@@ -5,7 +5,6 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  max-width: 100%;
 }
 
 .hero::before {
@@ -95,14 +94,14 @@
   animation: none;
 }
 
-/* Media queries para notebooks comuns */
-@media (min-width: 769px) and (max-width: 1023px) {
+/* Media queries para notebooks comuns (785px-1366px) */
+@media (min-width: 769px) and (max-width: 1366px) {
   .hero {
-    padding: 80px 40px 100px;
+    padding: 80px 30px 100px;
   }
   
   .hero-title {
-    font-size: 3.2rem;
+    font-size: 3rem;
   }
   
   .hero-subtitle {
@@ -110,8 +109,8 @@
   }
   
   .btn-hero-main {
-    font-size: 1.15rem;
-    padding: 18px 55px;
+    font-size: 1.1rem;
+    padding: 18px 50px;
   }
 }
 
