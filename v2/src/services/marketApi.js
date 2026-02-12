@@ -152,7 +152,7 @@ class MarketAPI {
     // Insight sobre confiabilidade
     const avgConfidence = market.reduce((sum, m) => sum + m.confidence, 0) / market.length;
     insights.push({
-      icon: '🎯',
+      icon: 'target',
       text: `Confiabilidade da análise: ${(avgConfidence * 100).toFixed(0)}%`,
       type: 'info'
     });
@@ -161,13 +161,13 @@ class MarketAPI {
     const spreadPercent = parseFloat(analysis.spreadPercentage);
     if (spreadPercent > 15) {
       insights.push({
-        icon: '📊',
+        icon: 'chart',
         text: `Alta variação de preços (${spreadPercent}%). Negocie!`,
         type: 'warning'
       });
     } else {
       insights.push({
-        icon: '📊',
+        icon: 'chart',
         text: `Preços consistentes entre fontes (variação de ${spreadPercent}%)`,
         type: 'success'
       });
@@ -178,7 +178,7 @@ class MarketAPI {
     const bestVariation = Math.abs(parseFloat(analysis.bestDeal.variation));
     if (bestVariation > 8) {
       insights.push({
-        icon: '💡',
+        icon: 'lightbulb',
         text: `${bestSource} tem os melhores preços (${bestVariation}% abaixo)`,
         type: 'success'
       });
@@ -188,7 +188,7 @@ class MarketAPI {
     const opportunities = market.filter(m => m.isOpportunity).length;
     if (opportunities > 0) {
       insights.push({
-        icon: '⭐',
+        icon: 'sparkles',
         text: `${opportunities} ${opportunities === 1 ? 'oportunidade encontrada' : 'oportunidades encontradas'}`,
         type: 'success'
       });

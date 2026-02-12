@@ -12,7 +12,7 @@ import {
   Filler
 } from 'chart.js';
 import marketApi from '../../services/marketApi';
-import { ChartIcon, AlertIcon, CheckIcon, TrendingUpIcon, TrendingDownIcon } from '../Icons/Icons';
+import { ChartIcon, AlertIcon, CheckIcon, TrendingUpIcon, TrendingDownIcon, TargetIcon, LightbulbIcon, SparklesIcon } from '../Icons/Icons';
 import './MarketComparison.css';
 
 ChartJS.register(
@@ -48,6 +48,16 @@ function MarketComparison({ vehicleData, onClose }) {
     } finally {
       setLoading(false);
     }
+  };
+
+  const getInsightIcon = (iconName) => {
+    const icons = {
+      'target': <TargetIcon size={20} />,
+      'chart': <ChartIcon size={20} />,
+      'lightbulb': <LightbulbIcon size={20} />,
+      'sparkles': <SparklesIcon size={20} />
+    };
+    return icons[iconName] || <CheckIcon size={20} />;
   };
 
   if (loading) {
@@ -183,11 +193,11 @@ function MarketComparison({ vehicleData, onClose }) {
         {/* Insights */}
         {insights.length > 0 && (
           <div className="insights-section">
-            <h3>💡 Insights</h3>
+            <h3><LightbulbIcon size={24} /> Insights</h3>
             <div className="insights-grid">
               {insights.map((insight, index) => (
                 <div key={index} className={`insight-card insight-${insight.type}`}>
-                  <span className="insight-icon">{insight.icon}</span>
+                  <span className="insight-icon">{getInsightIcon(insight.icon)}</span>
                   <span className="insight-text">{insight.text}</span>
                 </div>
               ))}
