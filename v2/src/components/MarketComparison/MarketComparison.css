@@ -1,0 +1,359 @@
+.market-comparison-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.market-comparison-content {
+  background: var(--bg-primary);
+  border-radius: 16px;
+  max-width: 1000px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.market-comparison-content.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  max-height: 300px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--border-color);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--bg-secondary);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  background: var(--danger-color);
+  color: white;
+  transform: rotate(90deg);
+}
+
+.modal-header {
+  padding: 30px 30px 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 8px 0;
+  color: var(--text-primary);
+}
+
+.vehicle-info {
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: 14px;
+}
+
+.recommendation-card {
+  margin: 20px 30px;
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid;
+  background: var(--bg-secondary);
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.recommendation-icon {
+  flex-shrink: 0;
+}
+
+.recommendation-content h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+}
+
+.recommendation-content p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 0 30px 20px;
+}
+
+.stat-card {
+  background: var(--bg-secondary);
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.stat-value.fipe {
+  color: var(--primary-color);
+}
+
+.stat-value.best {
+  color: var(--success-color);
+}
+
+.stat-ref,
+.stat-source,
+.stat-percentage {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.stat-variation {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.stat-variation.positive {
+  color: var(--success-color);
+}
+
+.stat-variation.negative {
+  color: var(--danger-color);
+}
+
+.chart-container {
+  padding: 20px 30px;
+  border-top: 1px solid var(--border-color);
+}
+
+.chart-container h3 {
+  margin: 0 0 20px 0;
+  color: var(--text-primary);
+}
+
+.chart-wrapper {
+  height: 300px;
+  background: var(--bg-secondary);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.opportunities-section {
+  padding: 20px 30px;
+  border-top: 1px solid var(--border-color);
+}
+
+.opportunities-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 16px 0;
+  color: var(--success-color);
+}
+
+.opportunities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.opportunity-card {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05));
+  border: 2px solid var(--success-color);
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.opportunity-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.opportunity-source {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.opportunity-badge {
+  background: var(--success-color);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.opportunity-price {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--success-color);
+  margin-bottom: 8px;
+}
+
+.opportunity-savings {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.sources-section {
+  padding: 20px 30px;
+  border-top: 1px solid var(--border-color);
+}
+
+.sources-section h3 {
+  margin: 0 0 16px 0;
+  color: var(--text-primary);
+}
+
+.sources-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.source-item {
+  background: var(--bg-secondary);
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.source-item.opportunity {
+  border: 2px solid var(--success-color);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), transparent);
+}
+
+.source-item:hover {
+  transform: translateX(4px);
+}
+
+.source-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.source-name {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.opportunity-tag {
+  background: var(--success-color);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.source-price-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.source-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.source-variation {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.modal-footer {
+  padding: 20px 30px;
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  border-radius: 0 0 16px 16px;
+}
+
+.disclaimer {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-align: center;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .market-comparison-content {
+    max-height: 95vh;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .opportunities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-wrapper {
+    height: 250px;
+  }
+}

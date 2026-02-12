@@ -1,15 +1,16 @@
 import { useAuth } from '../../context/AuthContext';
+import { DashboardIcon, SearchIcon, HistoryIcon, CompareIcon, StarIcon, MoonIcon, SunIcon } from '../Icons/Icons';
 import './Header.css';
 
 function Header({ currentPage, onNavigate, theme, onToggleTheme }) {
   const { user, logout } = useAuth();
 
   const menuItems = [
-    { id: 'dashboard', label: 'Dashboard', icon: '📊' },
-    { id: 'search', label: 'Consultar', icon: '🔍' },
-    { id: 'history', label: 'Histórico', icon: '📋' },
-    { id: 'compare', label: 'Comparar', icon: '⚖️' },
-    { id: 'favorites', label: 'Favoritos', icon: '⭐' },
+    { id: 'dashboard', label: 'Dashboard', icon: <DashboardIcon size={20} /> },
+    { id: 'search', label: 'Consultar', icon: <SearchIcon size={20} /> },
+    { id: 'history', label: 'Histórico', icon: <HistoryIcon size={20} /> },
+    { id: 'compare', label: 'Comparar', icon: <CompareIcon size={20} /> },
+    { id: 'favorites', label: 'Favoritos', icon: <StarIcon size={20} /> },
   ];
 
   return (
@@ -45,7 +46,7 @@ function Header({ currentPage, onNavigate, theme, onToggleTheme }) {
 
         <div className="header-right">
           <button className="theme-toggle" onClick={onToggleTheme} title="Alternar tema">
-            {theme === 'light' ? '🌙' : '☀️'}
+            {theme === 'light' ? <MoonIcon size={20} /> : <SunIcon size={20} />}
           </button>
 
           <div className="user-menu">

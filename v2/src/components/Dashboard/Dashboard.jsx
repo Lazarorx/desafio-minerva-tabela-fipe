@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import storageService from '../../services/storageService';
 import { useAuth } from '../../context/AuthContext';
+import { ChartIcon, StarIcon, ClockIcon, SearchIcon, HistoryIcon, CompareIcon } from '../Icons/Icons';
 import './Dashboard.css';
 
 function Dashboard({ onNavigate }) {
@@ -42,14 +43,16 @@ function Dashboard({ onNavigate }) {
     <div className="dashboard">
       <div className="dashboard-header">
         <div>
-          <h1>Bem-vindo, {user?.name}! 👋</h1>
+          <h1>Bem-vindo, {user?.name}!</h1>
           <p>Gerencie suas consultas e acompanhe seus veículos favoritos</p>
         </div>
       </div>
 
       <div className="stats-grid">
         <div className="stat-card">
-          <div className="stat-icon">📊</div>
+          <div className="stat-icon">
+            <ChartIcon size={32} color="white" />
+          </div>
           <div className="stat-content">
             <h3>Total de Consultas</h3>
             <p className="stat-value">{stats.totalConsultas}</p>
@@ -58,7 +61,9 @@ function Dashboard({ onNavigate }) {
         </div>
 
         <div className="stat-card">
-          <div className="stat-icon">⭐</div>
+          <div className="stat-icon">
+            <StarIcon size={32} color="white" filled />
+          </div>
           <div className="stat-content">
             <h3>Favoritos</h3>
             <p className="stat-value">{stats.totalFavoritos}</p>
@@ -67,7 +72,9 @@ function Dashboard({ onNavigate }) {
         </div>
 
         <div className="stat-card">
-          <div className="stat-icon">🕐</div>
+          <div className="stat-icon">
+            <ClockIcon size={32} color="white" />
+          </div>
           <div className="stat-content">
             <h3>Última Consulta</h3>
             <p className="stat-value-small">
@@ -84,25 +91,33 @@ function Dashboard({ onNavigate }) {
         <h2>Ações Rápidas</h2>
         <div className="actions-grid">
           <button className="action-card" onClick={() => onNavigate('search')}>
-            <div className="action-icon">🔍</div>
+            <div className="action-icon">
+              <SearchIcon size={48} color="#667eea" />
+            </div>
             <h3>Nova Consulta</h3>
             <p>Consultar preço de um veículo</p>
           </button>
 
           <button className="action-card" onClick={() => onNavigate('history')}>
-            <div className="action-icon">📋</div>
+            <div className="action-icon">
+              <HistoryIcon size={48} color="#667eea" />
+            </div>
             <h3>Ver Histórico</h3>
             <p>Acessar consultas anteriores</p>
           </button>
 
           <button className="action-card" onClick={() => onNavigate('compare')}>
-            <div className="action-icon">⚖️</div>
+            <div className="action-icon">
+              <CompareIcon size={48} color="#667eea" />
+            </div>
             <h3>Comparar Veículos</h3>
             <p>Compare até 3 veículos</p>
           </button>
 
           <button className="action-card" onClick={() => onNavigate('favorites')}>
-            <div className="action-icon">⭐</div>
+            <div className="action-icon">
+              <StarIcon size={48} color="#667eea" />
+            </div>
             <h3>Meus Favoritos</h3>
             <p>Veículos que você salvou</p>
           </button>

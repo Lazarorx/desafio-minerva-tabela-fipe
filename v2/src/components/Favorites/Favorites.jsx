@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
 import storageService from '../../services/storageService';
+import MarketComparison from '../MarketComparison/MarketComparison';
+import { StarIcon, XIcon, CompareIcon, ChartIcon } from '../Icons/Icons';
 import './Favorites.css';
 
 function Favorites() {
   const [favorites, setFavorites] = useState([]);
+  const [selectedVehicle, setSelectedVehicle] = useState(null);
 
   useEffect(() => {
     loadFavorites();
@@ -43,14 +46,14 @@ function Favorites() {
     <div className="favorites-page">
       <div className="favorites-header">
         <div>
-          <h1>⭐ Meus Favoritos</h1>
+          <h1><StarIcon size={32} filled /> Meus Favoritos</h1>
           <p>Veículos que você salvou para acompanhar</p>
         </div>
       </div>
 
       {favorites.length === 0 ? (
         <div className="empty-state">
-          <div className="empty-icon">⭐</div>
+          <div className="empty-icon"><StarIcon size={64} /></div>
           <h2>Nenhum favorito ainda</h2>
           <p>Adicione veículos aos favoritos para acompanhá-los facilmente</p>
         </div>
@@ -58,7 +61,7 @@ function Favorites() {
         <div className="favorites-grid">
           {favorites.map((item) => (
             <div key={item.id} className="favorite-card">
-              <div className="favorite-badge">⭐ Favorito</div>
+              <div className="favorite-badge"><StarIcon size={16} filled /> Favorito</div>
               
               <div className="favorite-header">
                 <div>
@@ -70,7 +73,7 @@ function Favorites() {
                   onClick={() => handleRemove(item.id)}
                   title="Remover dos favoritos"
                 >
-                  ✕
+                  <XIcon size={18} />
                 </button>
               </div>
 
@@ -99,12 +102,20 @@ function Favorites() {
                 Adicionado em {formatDate(item.favoritedAt)}
               </div>
 
-              <button
-                className="btn btn-secondary btn-block"
-                onClick={() => handleAddToComparison(item)}
-              >
-                ⚖️ Adicionar à Comparação
-              </button>
+              <div className="favorite-actions">
+                <button
+                  className="btn btn-primary btn-block"
+                  onClick={() => setSelectedVehicle(item)}
+                >
+                  <ChartIcon size={18} /> Analisar Mercado
+                </button>
+                <button
+                  className="btn btn-secondary btn-block"
+                  onClick={() => handleAddToComparison(item)}
+                >
+                  <CompareIcon size={18} /> Adicionar à Comparação
+                </button>
+              </div>
             </div>
           ))}
         </div>
@@ -114,6 +125,13 @@ function Favorites() {
         <div className="favorites-stats">
           <p>Total de {favorites.length} veículos favoritos</p>
         </div>
+      )}
+
+      {selectedVehicle && (
+        <MarketComparison 
+          vehicleData={selectedVehicle} 
+          onClose={() => setSelectedVehicle(null)} 
+        />
       )}
     </div>
   );

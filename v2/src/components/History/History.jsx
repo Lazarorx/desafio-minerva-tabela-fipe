@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 import storageService from '../../services/storageService';
+import MarketComparison from '../MarketComparison/MarketComparison';
+import { HistoryIcon, TrashIcon, XIcon, CalendarIcon, FuelIcon, StarIcon, CompareIcon, ChartIcon } from '../Icons/Icons';
 import './History.css';
 
 function History() {
   const [history, setHistory] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedVehicle, setSelectedVehicle] = useState(null);
 
   useEffect(() => {
     loadHistory();
@@ -63,12 +66,12 @@ function History() {
     <div className="history-page">
       <div className="history-header">
         <div>
-          <h1>📋 Histórico de Consultas</h1>
+          <h1><HistoryIcon size={32} /> Histórico de Consultas</h1>
           <p>Todas as suas consultas anteriores</p>
         </div>
         {history.length > 0 && (
           <button className="btn btn-danger" onClick={handleClearAll}>
-            🗑️ Limpar Histórico
+            <TrashIcon size={18} /> Limpar Histórico
           </button>
         )}
       </div>
@@ -86,7 +89,7 @@ function History() {
 
       {filteredHistory.length === 0 ? (
         <div className="empty-state">
-          <div className="empty-icon">📋</div>
+          <div className="empty-icon"><HistoryIcon size={64} /></div>
           <h2>Nenhuma consulta encontrada</h2>
           <p>
             {history.length === 0
@@ -108,13 +111,13 @@ function History() {
                   onClick={() => handleDelete(item.id)}
                   title="Remover"
                 >
-                  ✕
+                  <XIcon size={18} />
                 </button>
               </div>
 
               <div className="history-details">
-                <span>📅 {item.AnoModelo}</span>
-                <span>⛽ {item.Combustivel}</span>
+                <span><CalendarIcon size={16} /> {item.AnoModelo}</span>
+                <span><FuelIcon size={16} /> {item.Combustivel}</span>
               </div>
 
               <div className="history-price">
@@ -129,17 +132,24 @@ function History() {
               <div className="history-actions">
                 <button
                   className="btn-action"
+                  onClick={() => setSelectedVehicle(item)}
+                  title="Analisar mercado"
+                >
+                  <ChartIcon size={18} />
+                </button>
+                <button
+                  className="btn-action"
                   onClick={() => handleAddToFavorites(item)}
                   title="Adicionar aos favoritos"
                 >
-                  ⭐
+                  <StarIcon size={18} />
                 </button>
                 <button
                   className="btn-action"
                   onClick={() => handleAddToComparison(item)}
                   title="Adicionar à comparação"
                 >
-                  ⚖️
+                  <CompareIcon size={18} />
                 </button>
               </div>
             </div>
@@ -153,6 +163,13 @@ function History() {
             Mostrando {filteredHistory.length} de {history.length} consultas
           </p>
         </div>
+      )}
+
+      {selectedVehicle && (
+        <MarketComparison 
+          vehicleData={selectedVehicle} 
+          onClose={() => setSelectedVehicle(null)} 
+        />
       )}
     </div>
   );

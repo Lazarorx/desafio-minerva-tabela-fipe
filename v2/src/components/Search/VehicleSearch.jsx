@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import fipeApi from '../../services/fipeApi';
 import storageService from '../../services/storageService';
+import MarketComparison from '../MarketComparison/MarketComparison';
+import { SearchIcon, StarIcon, CompareIcon, HistoryIcon, CalendarIcon, FuelIcon, HashIcon, ChartIcon } from '../Icons/Icons';
 import './VehicleSearch.css';
 
 function VehicleSearch({ onNavigate }) {
@@ -15,6 +17,7 @@ function VehicleSearch({ onNavigate }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [result, setResult] = useState(null);
+  const [showMarketComparison, setShowMarketComparison] = useState(false);
 
   useEffect(() => {
     loadBrands();
@@ -124,7 +127,7 @@ function VehicleSearch({ onNavigate }) {
     <div className="vehicle-search-page">
       <div className="search-container">
         <div className="search-header">
-          <h1>🔍 Consultar Veículo</h1>
+          <h1><SearchIcon size={32} style={{verticalAlign: 'middle', marginRight: '12px'}} />Consultar Veículo</h1>
           <p>Consulte o preço de qualquer veículo pela Tabela Fipe</p>
         </div>
 
@@ -204,9 +207,9 @@ function VehicleSearch({ onNavigate }) {
                 <h3>{result.Marca}</h3>
                 <p className="result-model">{result.Modelo}</p>
                 <div className="result-details">
-                  <span>📅 {result.AnoModelo}</span>
-                  <span>⛽ {result.Combustivel}</span>
-                  <span>🔢 {result.CodigoFipe}</span>
+                  <span><CalendarIcon size={16} style={{verticalAlign: 'middle', marginRight: '4px'}} />{result.AnoModelo}</span>
+                  <span><FuelIcon size={16} style={{verticalAlign: 'middle', marginRight: '4px'}} />{result.Combustivel}</span>
+                  <span><HashIcon size={16} style={{verticalAlign: 'middle', marginRight: '4px'}} />{result.CodigoFipe}</span>
                 </div>
               </div>
 
@@ -218,17 +221,31 @@ function VehicleSearch({ onNavigate }) {
             </div>
 
             <div className="result-actions">
+              <button className="btn btn-primary" onClick={() => setShowMarketComparison(true)}>
+                <ChartIcon size={18} style={{marginRight: '8px'}} />
+                Analisar Mercado
+              </button>
               <button className="btn btn-success" onClick={handleAddToFavorites}>
-                ⭐ Adicionar aos Favoritos
+                <StarIcon size={18} style={{marginRight: '8px'}} />
+                Favoritos
               </button>
               <button className="btn btn-secondary" onClick={handleAddToComparison}>
-                ⚖️ Adicionar à Comparação
+                <CompareIcon size={18} style={{marginRight: '8px'}} />
+                Comparar
               </button>
               <button className="btn btn-secondary" onClick={() => onNavigate('history')}>
-                📋 Ver Histórico
+                <HistoryIcon size={18} style={{marginRight: '8px'}} />
+                Histórico
               </button>
             </div>
           </div>
+        )}
+
+        {showMarketComparison && result && (
+          <MarketComparison 
+            vehicleData={result} 
+            onClose={() => setShowMarketComparison(false)} 
+          />
         )}
       </div>
     </div>

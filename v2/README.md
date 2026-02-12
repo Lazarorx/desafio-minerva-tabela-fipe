@@ -1,110 +1,152 @@
-# FipeCheck V2 - Sistema Avançado
+# FipeCheck V2 - Sistema Avançado de Consulta Fipe
 
-Versão avançada do FipeCheck com funcionalidades completas de gerenciamento de consultas.
+Versão avançada do FipeCheck com funcionalidades completas de gerenciamento e análise de mercado.
 
-## Funcionalidades
+## Funcionalidades Principais
 
-### Autenticação
-- Sistema de login e cadastro
-- Sessão persistente (LocalStorage)
-- Proteção de rotas
-
-### Dashboard
-- Estatísticas de uso
-- Resumo de consultas
-- Acesso rápido às funcionalidades
-- Última consulta realizada
+### Autenticação e Perfil
+- Sistema de login e registro
+- Gerenciamento de perfil de usuário
+- Dados persistidos localmente (LocalStorage)
 
 ### Consulta de Veículos
 - Busca por marca, modelo e ano
-- Integração com API Fipe
-- Salvamento automático no histórico
-- Adicionar aos favoritos
-- Adicionar à comparação
+- Integração com API Fipe oficial
+- Resultados detalhados com todas as informações
+
+### Análise de Mercado (NOVO!)
+- Comparação de preços Fipe vs Mercado Real
+- Integração simulada com múltiplas fontes (Webmotors, OLX, Mercado Livre, iCarros)
+- Detecção automática de oportunidades (preços abaixo da Fipe)
+- Gráficos comparativos interativos
+- Recomendações inteligentes de compra
+- Análise estatística completa (média, mínimo, máximo, variação)
 
 ### Histórico
-- Lista de todas as consultas realizadas
-- Busca por marca ou modelo
-- Remover consultas individuais
-- Limpar histórico completo
-- Adicionar consultas aos favoritos ou comparação
+- Registro automático de todas as consultas
+- Busca e filtros
+- Análise de mercado direta do histórico
+- Adicionar ao favoritos ou comparação
 
 ### Favoritos
-- Salvar veículos favoritos
-- Visualização organizada
-- Adicionar à comparação
-- Remover dos favoritos
+- Salvar veículos para acompanhamento
+- Análise de mercado dos favoritos
+- Organização e gerenciamento
 
 ### Comparação
-- Comparar até 3 veículos lado a lado
-- Análise de diferença de preços
+- Compare até 3 veículos lado a lado
 - Tabela comparativa detalhada
-- Cálculo de variação percentual
+- Análise de diferenças de preço
 
-### Dark Mode
-- Tema claro e escuro
-- Alternância com um clique
-- Preferência salva
+### Dashboard
+- Estatísticas de uso
+- Ações rápidas
+- Última consulta
+
+## Diferenciais Técnicos
+
+### Análise de Mercado Inteligente
+O sistema simula dados realistas de mercado baseados em padrões reais:
+- Cada fonte tem variações características próprias
+- Algoritmo detecta oportunidades automaticamente
+- Recomendações baseadas em análise estatística
+- Visualização gráfica com Chart.js
+
+### Arquitetura
+- React 18 com Hooks
+- Context API para gerenciamento de estado
+- Serviços modulares (fipeApi, marketApi, storageService, authService)
+- Componentes reutilizáveis
+- Ícones SVG customizados
+
+### UX/UI
+- Interface moderna e responsiva
+- Dark mode
+- Animações suaves
+- Feedback visual em todas as ações
+- Modal interativo para análise de mercado
 
 ## Tecnologias
 
 - React 19
 - Vite
 - Axios
-- Chart.js
-- React Chart.js 2
-- LocalStorage para persistência
+- Chart.js + react-chartjs-2
+- CSS3 com variáveis customizadas
+- LocalStorage API
 
-## Como Rodar
+## Como Usar
 
+1. Instalar dependências:
 ```bash
-# Instalar dependências
 npm install
+```
 
-# Rodar em desenvolvimento
+2. Executar em desenvolvimento:
+```bash
 npm run dev
+```
 
-# Build para produção
+3. Build para produção:
+```bash
 npm run build
 ```
 
-## Estrutura
+## Estrutura do Projeto
 
 ```
 v2/
 ├── src/
 │   ├── components/
-│   │   ├── Auth/           # Login e Register
+│   │   ├── Auth/           # Login e Registro
 │   │   ├── Dashboard/      # Dashboard principal
-│   │   ├── Layout/         # Header
-│   │   ├── Search/         # Consulta de veículos
-│   │   ├── History/        # Histórico
-│   │   ├── Compare/        # Comparação
-│   │   └── Favorites/      # Favoritos
+│   │   ├── Search/         # Busca de veículos
+│   │   ├── History/        # Histórico de consultas
+│   │   ├── Favorites/      # Favoritos
+│   │   ├── Compare/        # Comparação de veículos
+│   │   ├── MarketComparison/ # Análise de mercado (NOVO!)
+│   │   ├── Layout/         # Header e navegação
+│   │   └── Icons/          # Ícones SVG
+│   ├── services/
+│   │   ├── fipeApi.js      # Integração API Fipe
+│   │   ├── marketApi.js    # Análise de mercado (NOVO!)
+│   │   ├── authService.js  # Autenticação
+│   │   └── storageService.js # Persistência local
 │   ├── context/
 │   │   └── AuthContext.jsx # Context de autenticação
-│   ├── services/
-│   │   ├── authService.js  # Serviço de autenticação
-│   │   ├── storageService.js # Gerenciamento LocalStorage
-│   │   └── fipeApi.js      # Integração API Fipe
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-├── package.json
-└── vite.config.js
+│   └── App.jsx
+└── package.json
 ```
 
-## Diferenciais
+## Funcionalidade Killer: Análise de Mercado
 
-- Interface moderna e responsiva
-- Dark mode
-- Persistência de dados com LocalStorage
-- Sistema de autenticação fake (demonstração)
-- Comparação inteligente de veículos
-- Análise de preços
-- Histórico completo
-- Favoritos organizados
+A análise de mercado é o diferencial competitivo do FipeCheck V2:
+
+- Compara preço Fipe com 4 fontes de mercado
+- Identifica automaticamente oportunidades (preços 5%+ abaixo da Fipe)
+- Gera recomendações inteligentes (Excelente/Boa/Neutra/Atenção)
+- Mostra economia potencial em cada fonte
+- Gráfico visual para fácil comparação
+- Estatísticas completas (média, spread, variação)
+
+### Como Funciona
+
+1. Consulte um veículo normalmente
+2. Clique em "Analisar Mercado"
+3. O sistema busca preços simulados de 4 fontes
+4. Receba análise completa com recomendação
+5. Identifique as melhores oportunidades
+
+## Próximos Passos (Produção)
+
+- Integrar com APIs reais de marketplaces
+- Backend com Node.js + Express
+- Banco de dados PostgreSQL
+- Autenticação JWT
+- Notificações push
+- Histórico de variação de preços
+- Alertas personalizados
 
 ## Desenvolvido para
 
-Desafio Minerva 2026 - Demonstração de habilidades avançadas em React e gerenciamento de estado.
+Desafio Minerva 2026 - Tabela Fipe

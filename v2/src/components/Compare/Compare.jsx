@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import storageService from '../../services/storageService';
+import { CompareIcon, TrashIcon, XIcon, ChartIcon, PlusIcon } from '../Icons/Icons';
 import './Compare.css';
 
 function Compare() {
@@ -52,19 +53,19 @@ function Compare() {
     <div className="compare-page">
       <div className="compare-header">
         <div>
-          <h1>⚖️ Comparar Veículos</h1>
+          <h1><CompareIcon size={32} /> Comparar Veículos</h1>
           <p>Compare até 3 veículos lado a lado</p>
         </div>
         {comparisons.length > 0 && (
           <button className="btn btn-danger" onClick={handleClearAll}>
-            🗑️ Limpar Comparação
+            <TrashIcon size={18} /> Limpar Comparação
           </button>
         )}
       </div>
 
       {comparisons.length === 0 ? (
         <div className="empty-state">
-          <div className="empty-icon">⚖️</div>
+          <div className="empty-icon"><CompareIcon size={64} /></div>
           <h2>Nenhum veículo para comparar</h2>
           <p>Adicione veículos à comparação para ver as diferenças</p>
         </div>
@@ -72,7 +73,7 @@ function Compare() {
         <>
           {priceDiff && comparisons.length >= 2 && (
             <div className="price-analysis">
-              <h3>📊 Análise de Preços</h3>
+              <h3><ChartIcon size={24} /> Análise de Preços</h3>
               <div className="analysis-grid">
                 <div className="analysis-item">
                   <span className="analysis-label">Diferença</span>
@@ -96,7 +97,7 @@ function Compare() {
                   onClick={() => handleRemove(item.id)}
                   title="Remover da comparação"
                 >
-                  ✕
+                  <XIcon size={18} />
                 </button>
 
                 <div className="compare-header-info">
@@ -133,7 +134,7 @@ function Compare() {
             {comparisons.length < 3 && (
               <div className="compare-card compare-placeholder">
                 <div className="placeholder-content">
-                  <div className="placeholder-icon">➕</div>
+                  <div className="placeholder-icon"><PlusIcon size={48} /></div>
                   <p>Adicione mais veículos para comparar</p>
                   <span className="placeholder-hint">
                     {3 - comparisons.length} {comparisons.length === 2 ? 'vaga disponível' : 'vagas disponíveis'}
@@ -145,7 +146,7 @@ function Compare() {
 
           {comparisons.length >= 2 && (
             <div className="comparison-table">
-              <h3>📋 Comparação Detalhada</h3>
+              <h3><HistoryIcon size={24} /> Comparação Detalhada</h3>
               <table>
                 <thead>
                   <tr>
