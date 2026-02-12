@@ -89,6 +89,12 @@ main.search-view {
   background: #f5f7fa;
 }
 
+@media (min-width: 768px) {
+  main.search-view {
+    padding: 60px 40px;
+  }
+}
+
 @media (min-width: 1024px) {
   main.search-view {
     padding: 60px 40px;
