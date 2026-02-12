@@ -30,6 +30,7 @@ function MarketComparison({ vehicleData, onClose }) {
   const [loading, setLoading] = useState(true);
   const [comparison, setComparison] = useState(null);
   const [recommendation, setRecommendation] = useState(null);
+  const [insights, setInsights] = useState([]);
 
   useEffect(() => {
     loadMarketData();
@@ -41,6 +42,7 @@ function MarketComparison({ vehicleData, onClose }) {
       const data = await marketApi.getMarketPrices(vehicleData);
       setComparison(data);
       setRecommendation(marketApi.generateRecommendation(data));
+      setInsights(marketApi.generateInsights(data));
     } catch (error) {
       console.error('Erro ao carregar dados de mercado:', error);
     } finally {
@@ -177,6 +179,21 @@ function MarketComparison({ vehicleData, onClose }) {
             <Line data={chartData} options={chartOptions} />
           </div>
         </div>
+
+        {/* Insights */}
+        {insights.length > 0 && (
+          <div className="insights-section">
+            <h3>💡 Insights</h3>
+            <div className="insights-grid">
+              {insights.map((insight, index) => (
+                <div key={index} className={`insight-card insight-${insight.type}`}>
+                  <span className="insight-icon">{insight.icon}</span>
+                  <span className="insight-text">{insight.text}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Oportunidades */}
         {opportunities.length > 0 && (
