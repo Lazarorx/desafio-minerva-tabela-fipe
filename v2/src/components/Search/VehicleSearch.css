@@ -1,0 +1,154 @@
+.vehicle-search-page {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.search-header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.search-header h1 {
+  font-size: 2.5rem;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.search-header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.search-card {
+  background: var(--bg-primary);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 16px var(--shadow);
+}
+
+.result-card {
+  background: var(--bg-primary);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 16px var(--shadow);
+  animation: slideIn 0.5s ease-out;
+}
+
+.result-header h2 {
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.result-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.result-info h3 {
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.result-model {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.result-details {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.result-details span {
+  font-size: 0.9rem;
+  color: var(--text-tertiary);
+  padding: 6px 12px;
+  background: var(--bg-primary);
+  border-radius: 6px;
+}
+
+.result-price {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.price-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.price-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--success);
+}
+
+.price-ref {
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+}
+
+.result-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.result-actions .btn {
+  flex: 1;
+  min-width: 200px;
+}
+
+@media (max-width: 768px) {
+  .vehicle-search-page {
+    padding: 20px 16px;
+  }
+
+  .search-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .search-card {
+    padding: 24px;
+  }
+
+  .result-content {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .result-price {
+    text-align: center;
+  }
+
+  .result-actions {
+    flex-direction: column;
+  }
+
+  .result-actions .btn {
+    width: 100%;
+  }
+}
