@@ -110,7 +110,7 @@ function VehicleSearch({ onSearchComplete }) {
     <div className="vehicle-search">
       <h2>Consultar Veículo</h2>
 
-      {error && <div className="error-message">⚠️ {error}</div>}
+      {error && <div className="error-message">{error}</div>}
 
       {loading && (
         <div className="loading-spinner">

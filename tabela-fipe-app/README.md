@@ -2,21 +2,21 @@
 
 Aplicação web para consulta de preços de veículos na Tabela Fipe.
 
-## 🚀 Tecnologias
+## Tecnologias
 
 - React 19
 - Vite
 - Axios
 - CSS puro
 
-## 📋 Funcionalidades
+## Funcionalidades
 
 - Consulta de preços de carros pela Tabela Fipe
 - Seleção em cascata: Marca → Modelo → Ano
 - Exibição de informações detalhadas do veículo
 - Interface responsiva
 
-## 🔧 Como rodar
+## Como rodar
 
 ```bash
 # Instalar dependências
@@ -29,7 +29,7 @@ npm run dev
 npm run build
 ```
 
-## 📦 Estrutura
+## Estrutura
 
 ```
 src/
@@ -45,10 +45,10 @@ src/
 └── main.jsx                 # Entry point
 ```
 
-## 🌐 API
+## API
 
 Utiliza a API pública da Fipe: https://parallelum.com.br/fipe/api/v1
 
-## 👨‍💻 Desenvolvimento
+## Desenvolvimento
 
 Projeto desenvolvido como parte do Desafio Minerva 2026.

@@ -1,25 +1,25 @@
 # FipeCheck - Consulta Tabela Fipe
 
-🚗 Aplicação web moderna para consulta de preços de veículos pela Tabela Fipe oficial.
+Aplicação web moderna para consulta de preços de veículos pela Tabela Fipe oficial.
 
-## 🌐 Demo Online
+## Demo Online
 
 **URL:** https://fipecheck.vercel.app
 
-## 📋 Sobre o Projeto
+## Sobre o Projeto
 
 FipeCheck é uma aplicação desenvolvida como parte do Desafio Minerva 2026. O projeto oferece uma interface intuitiva e moderna para consulta de preços de veículos utilizando a API oficial da Tabela Fipe.
 
-## ✨ Funcionalidades
+## Funcionalidades
 
-- 🔍 Consulta de preços em tempo real
-- 🎨 Interface moderna e responsiva
-- 📱 Compatível com dispositivos móveis
-- 🚀 Performance otimizada
-- 📤 Compartilhamento de resultados
-- 💾 Histórico de consultas
+- Consulta de preços em tempo real
+- Interface moderna e responsiva
+- Compatível com dispositivos móveis
+- Performance otimizada
+- Compartilhamento de resultados
+- Histórico de consultas
 
-## 🛠️ Tecnologias
+## Tecnologias
 
 - **Frontend:** React 19
 - **Build Tool:** Vite
@@ -28,7 +28,7 @@ FipeCheck é uma aplicação desenvolvida como parte do Desafio Minerva 2026. O 
 - **Deploy:** Vercel
 - **API:** Fipe API (parallelum.com.br)
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 ├── tabela-fipe-app/          # Aplicação React
@@ -46,7 +46,7 @@ FipeCheck é uma aplicação desenvolvida como parte do Desafio Minerva 2026. O 
 └── README.md                 # Este arquivo
 ```
 
-## 🚀 Como Rodar Localmente
+## Como Rodar Localmente
 
 ```bash
 # Clone o repositório
@@ -64,14 +64,14 @@ npm run dev
 # Acesse http://localhost:5173
 ```
 
-## 📦 Build para Produção
+## Build para Produção
 
 ```bash
 cd tabela-fipe-app
 npm run build
 ```
 
-## 📚 Documentação
+## Documentação
 
 Toda a documentação técnica do projeto está disponível na pasta `docs/`:
 
@@ -81,10 +81,10 @@ Toda a documentação técnica do projeto está disponível na pasta `docs/`:
 - **Diagramas:** Diagramas de arquitetura e fluxos
 - **Protótipos:** Wireframes e protótipos
 
-## 👨‍💻 Desenvolvimento
+## Desenvolvimento
 
 Desenvolvido por Lazaro Rafael Xavier para o Desafio Minerva 2026.
 
-## 📄 Licença
+## Licença
 
 Este projeto foi desenvolvido para fins educacionais como parte do Desafio Minerva 2026.
