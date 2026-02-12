@@ -196,10 +196,10 @@ GET /carros/marcas/{marcaId}/modelos/{modeloId}/anos/{anoId}
 
 ## 12. Critérios de Sucesso
 
-✅ Usuário consegue consultar preço de um carro
-✅ Interface funcional e responsiva
-✅ Código organizado e comentado
-✅ Funciona sem erros no console
+- Usuário consegue consultar preço de um carro
+- Interface funcional e responsiva
+- Código organizado e comentado
+- Funciona sem erros no console
 
 **Não é critério:**
 - Ter banco de dados

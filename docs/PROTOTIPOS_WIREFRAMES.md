@@ -127,7 +127,7 @@
 
 **Estado 6: Erro**
 - Mensagem de erro em vermelho no topo
-- "❌ Erro ao consultar. Tente novamente."
+- "Erro ao consultar. Tente novamente."
 - Campos habilitados para tentar novamente
 
 
@@ -543,7 +543,7 @@ Se você quiser criar uma versão mais visual dos wireframes, use:
 5. Exportar como PNG ou compartilhar link
 
 ### 10.3 Opção 3: Usar este Documento
-- Já está pronto! ✅
+- Já está pronto!
 - Wireframes em ASCII são válidos
 - Especificações visuais completas
 - Economiza tempo
@@ -601,5 +601,5 @@ Se você quiser criar uma versão mais visual dos wireframes, use:
 **Cores:** Azul (#3498db), Verde (#2ecc71), Vermelho (#e74c3c)  
 **Responsivo:** Mobile-first  
 
-**Status:** ✅ Protótipos completos
+**Status:** Protótipos completos
 

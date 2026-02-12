@@ -77,7 +77,7 @@ Permitir que usuários consultem o preço Fipe de veículos de forma simples e r
 - [ ] Definir validações e tratamento de erros
 
 **Estimativa:** 30 min  
-**Status:** Done ✅
+**Status:** Done
 
 ---
 
@@ -92,7 +92,7 @@ Permitir que usuários consultem o preço Fipe de veículos de forma simples e r
 - [ ] Definir fluxo de comunicação entre componentes
 
 **Estimativa:** 2h  
-**Status:** Done ✅
+**Status:** Done
 
 ---
 
