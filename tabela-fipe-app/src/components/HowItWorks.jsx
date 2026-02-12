@@ -8,7 +8,7 @@ function HowItWorks() {
       description: 'Selecione a marca do veículo que deseja consultar' 
     },
     { 
-      icon: <svg className="step-icon-svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 17h14v-5H5v5zm7-13C6.48 4 2 6.24 2 9v10c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h14v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1V9c0-2.76-4.48-5-10-5z"/><circle cx="7.5" cy="14.5" r="1.5"/><circle cx="16.5" cy="14.5" r="1.5"/></svg>,
+      icon: <svg className="step-icon-svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 17h14v2H5z"/><path d="M16 6l3 5H5l3-5h8z"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M5 11V8h14v3"/></svg>,
       title: 'Selecione o Modelo', 
       description: 'Escolha o modelo específico do carro' 
     },
