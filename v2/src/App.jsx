@@ -5,6 +5,9 @@ import Register from './components/Auth/Register';
 import Header from './components/Layout/Header';
 import Dashboard from './components/Dashboard/Dashboard';
 import VehicleSearch from './components/Search/VehicleSearch';
+import History from './components/History/History';
+import Compare from './components/Compare/Compare';
+import Favorites from './components/Favorites/Favorites';
 import storageService from './services/storageService';
 import './App.css';
 
@@ -48,9 +51,9 @@ function AppContent() {
       <main className="main-content">
         {currentPage === 'dashboard' && <Dashboard onNavigate={setCurrentPage} />}
         {currentPage === 'search' && <VehicleSearch onNavigate={setCurrentPage} />}
-        {currentPage === 'history' && <div className="placeholder">📋 Histórico - Em desenvolvimento...</div>}
-        {currentPage === 'compare' && <div className="placeholder">⚖️ Comparação - Em desenvolvimento...</div>}
-        {currentPage === 'favorites' && <div className="placeholder">⭐ Favoritos - Em desenvolvimento...</div>}
+        {currentPage === 'history' && <History />}
+        {currentPage === 'compare' && <Compare />}
+        {currentPage === 'favorites' && <Favorites />}
       </main>
     </div>
   );
