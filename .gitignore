@@ -26,9 +26,14 @@ COMPARACAO.md
 RESUMO_EXECUTIVO.md
 PROXIMOS_PASSOS_*.md
 PLANNING.md
+REORGANIZACAO.md
 
-# Node modules (quando implementar)
+# Node modules
 node_modules/
+v1/node_modules/
+v2/node_modules/
+tabela-fipe-app/node_modules/
+fipecheck-v2/node_modules/
 dist/
 build/
 
