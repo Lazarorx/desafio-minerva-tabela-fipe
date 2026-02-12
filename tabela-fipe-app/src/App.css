@@ -40,6 +40,18 @@ header {
   z-index: 100;
   width: 100%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .header-content {
@@ -55,10 +67,21 @@ header {
   display: flex;
   align-items: center;
   gap: 12px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.logo:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
 }
 
 .logo svg {
   flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover svg {
+  transform: scale(1.1) rotate(5deg);
 }
 
 header h1 {
