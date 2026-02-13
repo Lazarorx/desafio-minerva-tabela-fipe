@@ -103,11 +103,27 @@ npm run build
 
 Toda a documentação técnica do projeto está disponível na pasta `docs/`:
 
-- **Planning:** Planejamento e cronograma
-- **Modelo de Dados:** Estrutura de dados
-- **TD Componentes:** Documentação técnica dos componentes
-- **Diagramas:** Diagramas de arquitetura e fluxos
-- **Protótipos:** Wireframes e protótipos
+### Documentação de Planejamento
+- `PLANNING_SIMPLIFICADO.md` - Planejamento do MVP
+- `JIRA_PLANNING.md` - Planejamento no Jira
+
+### Documentação de Sistema
+- `VISAO_SISTEMA_COMPLETO.md` - Visão completa do sistema (atores, requisitos, roadmap)
+- `DIAGRAMA_ATORES.md` - Diagrama de atores e casos de uso detalhados
+
+### Documentação Técnica
+- `MODELO_DE_DADOS.md` - Estrutura de dados (LocalStorage - V2)
+- `MODELO_DADOS_EXPANDIDO.md` - Modelo expandido (LocalStorage + PostgreSQL V3)
+- `ARQUITETURA_EXPANDIDA.md` - Arquitetura completa (V1, V2 e V3)
+- `TD_COMPONENTES.md` - Design técnico dos componentes React
+- `DIAGRAMAS_TECNICOS.md` - Diagramas de arquitetura e fluxos
+
+### Documentação de Design
+- `PROTOTIPOS_WIREFRAMES.md` - Protótipos e wireframes das telas
+
+### Documentação de Apresentação
+- `COLA_TECNICA_APRESENTACAO.md` - Cola técnica para apresentação
+- `CHECKLIST_SCREENSHOTS.md` - Checklist de screenshots
 
 ## Funcionalidades
 
