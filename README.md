@@ -145,12 +145,6 @@ Toda a documentação técnica do projeto está disponível na pasta `docs/`:
 - `PLANNING_SIMPLIFICADO.md` - Planejamento do MVP
 - `JIRA_PLANNING.md` - Planejamento no Jira
 
-#### Documentação de Apresentação
-- `COLA_TECNICA_APRESENTACAO.md` - Cola técnica
-- `RESUMO_APRESENTACAO.md` - Guia de apresentação
-- `CHECKLIST_FINAL_APRESENTACAO.md` - Checklist final
-- `CHECKLIST_SCREENSHOTS.md` - Checklist de screenshots
-
 ## Funcionalidades
 
 ### V1 - MVP
