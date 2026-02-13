@@ -8,10 +8,23 @@ O FipeCheck é um sistema de consulta e análise de preços de veículos baseado
 
 ## 2. Atores do Sistema
 
-### 2.1 Usuário (Implementado)
-**Descrição:** Pessoa interessada em consultar preços de veículos e analisar oportunidades de mercado.
+O sistema FipeCheck contempla **5 atores** com responsabilidades operacionais e estratégicas distintas:
 
-**Funcionalidades:**
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                      SISTEMA FIPECHECK                          │
+│                                                                 │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌────┐│
+│  │ USUÁRIO  │  │PESQUISADOR│  │COORDENADOR│  │ ANALISTA │  │ADMIN││
+│  │ Consulta │  │  Captura  │  │ Cadastra  │  │ Analisa  │  │Gerencia││
+│  └──────────┘  └──────────┘  └──────────┘  └──────────┘  └────┘│
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### 2.1 Usuário (Consumidor Final) - Implementado
+**Descrição:** Pessoa física interessada em consultar preços de veículos e analisar oportunidades de mercado.
+
+**Responsabilidades:**
 - Consultar preços pela Tabela Fipe
 - Visualizar análise de mercado multi-fonte
 - Gerenciar histórico de consultas
@@ -19,31 +32,138 @@ O FipeCheck é um sistema de consulta e análise de preços de veículos baseado
 - Comparar até 3 veículos
 - Autenticar-se no sistema (V2)
 
-**Status:** Totalmente implementado nas versões V1 e V2
+**Nível de Acesso:** Básico (somente leitura de dados públicos)
 
-### 2.2 Analista de Mercado (Planejado)
-**Descrição:** Profissional responsável por monitorar tendências de mercado e gerar relatórios.
+**Status:** ✅ Totalmente implementado (V1 e V2)
 
-**Funcionalidades Planejadas:**
+---
+
+### 2.2 Pesquisador de Mercado (Operacional) - Planejado
+**Descrição:** Profissional responsável por capturar preços de veículos em marketplaces e lojas físicas.
+
+**Responsabilidades Operacionais:**
+- Capturar preços em marketplaces (Webmotors, OLX, Mercado Livre, iCarros, Kavak)
+- Registrar URL da fonte e observações
+- Validar dados capturados (preço, km, estado)
+- Atualizar preços periodicamente
+- Marcar anúncios expirados
+- Reportar anomalias
+
+**Fluxo de Trabalho:**
+1. Recebe tarefa de monitoramento
+2. Busca veículo em marketplace
+3. Captura preço e dados
+4. Registra no sistema
+5. Sistema valida automaticamente
+
+**Nível de Acesso:** Intermediário (leitura + escrita em market_prices)
+
+**Status:** ⏳ Planejado para V3
+
+---
+
+### 2.3 Coordenador de Dados (Operacional) - Planejado
+**Descrição:** Profissional responsável por cadastrar e manter dados mestres do sistema.
+
+**Responsabilidades Operacionais:**
+- Cadastrar novas marcas de veículos
+- Cadastrar novos modelos e versões
+- Atualizar especificações técnicas
+- Gerenciar categorias (SUV, Sedan, Hatch, etc)
+- Validar dados cadastrados por pesquisadores
+- Sincronizar com API Fipe
+- Aprovar/rejeitar novos registros
+- Manter qualidade dos dados
+
+**Fluxo de Trabalho:**
+1. Recebe solicitação de novo modelo
+2. Pesquisa informações (Fipe, fabricante)
+3. Cadastra no sistema
+4. Valida e publica
+5. Monitora qualidade
+
+**Nível de Acesso:** Intermediário (leitura + escrita em dados mestres)
+
+**Status:** ⏳ Planejado para V3
+
+---
+
+### 2.4 Analista de Mercado (Estratégico) - Planejado
+**Descrição:** Profissional que monitora tendências de mercado automotivo e gera relatórios estratégicos.
+
+**Responsabilidades Estratégicas:**
 - Visualizar dashboard com estatísticas agregadas
 - Gerar relatórios de tendências de preços
 - Analisar variações por marca/modelo/região
+- Identificar padrões de mercado
 - Exportar dados para análise externa
 - Configurar alertas de variação de preços
 
-**Status:** Planejado para V3
+**Diferença vs Pesquisador:**
+- **Pesquisador:** Captura dados operacionais (preços individuais)
+- **Analista:** Analisa dados agregados (tendências, padrões)
 
-### 2.3 Administrador (Planejado)
-**Descrição:** Responsável pela gestão do sistema e usuários.
+**Nível de Acesso:** Avançado (leitura de todos os dados + geração de relatórios)
 
-**Funcionalidades Planejadas:**
-- Gerenciar usuários e permissões
+**Status:** ⏳ Planejado para V3
+
+---
+
+### 2.5 Administrador (Gestão) - Planejado
+**Descrição:** Responsável pela gestão técnica do sistema, usuários e configurações.
+
+**Responsabilidades de Gestão:**
+- Gerenciar usuários (criar, editar, desativar)
+- Gerenciar permissões (atribuir roles)
 - Configurar integrações com APIs externas
 - Monitorar uso do sistema
-- Gerenciar cache de dados
 - Visualizar logs de auditoria
+- Gerenciar cache e performance
+- Executar backups manuais
 
-**Status:** Planejado para V3
+**Nível de Acesso:** Total (todas as funcionalidades)
+
+**Status:** ⏳ Planejado para V3
+
+---
+
+### 2.6 Matriz de Responsabilidades
+
+| Responsabilidade | Usuário | Pesquisador | Coordenador | Analista | Admin |
+|------------------|---------|-------------|-------------|----------|-------|
+| Consultar Fipe | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Analisar Mercado | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Capturar Preços | ❌ | ✅ | ❌ | ❌ | ✅ |
+| Cadastrar Marcas/Modelos | ❌ | ❌ | ✅ | ❌ | ✅ |
+| Validar Dados | ❌ | ❌ | ✅ | ❌ | ✅ |
+| Dashboard Analítico | ❌ | ❌ | ❌ | ✅ | ✅ |
+| Gerar Relatórios | ❌ | ❌ | ❌ | ✅ | ✅ |
+| Gerenciar Usuários | ❌ | ❌ | ❌ | ❌ | ✅ |
+| Configurar Sistema | ❌ | ❌ | ❌ | ❌ | ✅ |
+
+---
+
+### 2.7 Fluxo de Trabalho Integrado
+
+```
+1. COORDENADOR cadastra nova marca/modelo
+   ↓
+2. Sistema sincroniza com API Fipe
+   ↓
+3. PESQUISADOR recebe tarefa de capturar preços
+   ↓
+4. PESQUISADOR busca em marketplaces e registra
+   ↓
+5. COORDENADOR valida dados capturados
+   ↓
+6. Sistema processa e armazena preços
+   ↓
+7. USUÁRIO consulta e vê análise de mercado
+   ↓
+8. ANALISTA gera relatórios de tendências
+   ↓
+9. ADMIN monitora sistema e usuários
+```
 
 ---
 
