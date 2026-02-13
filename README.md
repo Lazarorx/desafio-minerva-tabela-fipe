@@ -101,28 +101,54 @@ npm run build
 
 ## Documentação
 
+### 📄 Documento Principal
+
+**[RELATORIO_FINAL.md](docs/RELATORIO_FINAL.md)** - Relatório único consolidado com todos os entregáveis:
+- Planejamento completo
+- Arquitetura (V1, V2 e V3)
+- Modelo de dados (atual + futuro)
+- Visão funcional (5 atores, 9 RFs, 4 RNFs)
+- Protótipos e wireframes
+- Worker Queue e batch jobs
+- Diferenciais competitivos
+- Resultados e roadmap
+
+**[EVOLUCAO_PROJETO.md](docs/EVOLUCAO_PROJETO.md)** - Comparação entrega inicial vs final:
+- Escopo planejado vs entregue
+- Decisões tomadas
+- Mudanças de escopo
+- Lições aprendidas
+- Evolução técnica
+
+---
+
+### 📚 Documentação Detalhada
+
 Toda a documentação técnica do projeto está disponível na pasta `docs/`:
 
-### Documentação de Planejamento
+#### Documentação de Sistema
+- `VISAO_SISTEMA_COMPLETO.md` - Visão completa (atores, requisitos, roadmap)
+- `ATORES_OPERACIONAIS.md` - Detalhamento dos 5 atores com mockups
+- `DIAGRAMA_ATORES.md` - Casos de uso e matriz de permissões
+
+#### Documentação Técnica
+- `ARQUITETURA_EXPANDIDA.md` - Arquitetura V1, V2 e V3 completas
+- `MODELO_DE_DADOS.md` - Estrutura LocalStorage (V2)
+- `MODELO_DADOS_EXPANDIDO.md` - LocalStorage + PostgreSQL (V3)
+- `TD_COMPONENTES.md` - Design técnico dos componentes React
+- `DIAGRAMAS_TECNICOS.md` - Diagramas de fluxo
+
+#### Documentação de Design
+- `PROTOTIPOS_WIREFRAMES.md` - Protótipos e wireframes das telas
+
+#### Documentação de Planejamento
 - `PLANNING_SIMPLIFICADO.md` - Planejamento do MVP
 - `JIRA_PLANNING.md` - Planejamento no Jira
 
-### Documentação de Sistema
-- `VISAO_SISTEMA_COMPLETO.md` - Visão completa do sistema (atores, requisitos, roadmap)
-- `DIAGRAMA_ATORES.md` - Diagrama de atores e casos de uso detalhados
-
-### Documentação Técnica
-- `MODELO_DE_DADOS.md` - Estrutura de dados (LocalStorage - V2)
-- `MODELO_DADOS_EXPANDIDO.md` - Modelo expandido (LocalStorage + PostgreSQL V3)
-- `ARQUITETURA_EXPANDIDA.md` - Arquitetura completa (V1, V2 e V3)
-- `TD_COMPONENTES.md` - Design técnico dos componentes React
-- `DIAGRAMAS_TECNICOS.md` - Diagramas de arquitetura e fluxos
-
-### Documentação de Design
-- `PROTOTIPOS_WIREFRAMES.md` - Protótipos e wireframes das telas
-
-### Documentação de Apresentação
-- `COLA_TECNICA_APRESENTACAO.md` - Cola técnica para apresentação
+#### Documentação de Apresentação
+- `COLA_TECNICA_APRESENTACAO.md` - Cola técnica
+- `RESUMO_APRESENTACAO.md` - Guia de apresentação
+- `CHECKLIST_FINAL_APRESENTACAO.md` - Checklist final
 - `CHECKLIST_SCREENSHOTS.md` - Checklist de screenshots
 
 ## Funcionalidades
